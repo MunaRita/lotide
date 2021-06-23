@@ -4,7 +4,7 @@ const tail = function(actual) {
   }
 
 };
-
+// check if the code prints out the expected
 //console.log(tail(["Hello", "Lighthouse", "Labs"]));
 
 const assertEqual = function(actual, expected) {

@@ -1,7 +1,5 @@
 // FUNCTION IMPLEMENTATION
-const head = function(actual) {
-  return (actual[0]);
-};
+const head = (actual) => {return (actual[0])};
 
 const assertEqual = function(actual, expected) {
 
