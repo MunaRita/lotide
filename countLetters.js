@@ -25,6 +25,6 @@ const assertEqual = function(actual, expected) {
   }
 
 };
-console.log(countLetters('Lighthouse Lab')); // how to make the code count both small and uppercase?
+console.log(countLetters("lighthouse in the house")); // how to make the code count both small and uppercase?
 
 //console.log(assertEqual(countLetters("Lighthouse Labs"),{'L': 1, 'a': 1, 'b': 1}));
