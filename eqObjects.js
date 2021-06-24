@@ -15,13 +15,16 @@ const eqObjects = function(object1, object2) {
   return true;
 }
 
-
-
 const eqArrays = function(arr1,arr2) {
-  return Array.isArray(arr1) &&
-    Array.isArray(arr2) &&
-    arr1.length === arr2.length &&
-    arr1.every((val, index) => val === arr2[index]);
+  if(arr1.length !== arr2.length) {
+    return false;
+  }
+  for(let i = 0; i < arr1.length; i++) {
+    if(arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
 }
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -32,18 +35,27 @@ const assertEqual = function(actual, expected) {
 
 };
 
-// const object1 = { a: "1", b: "2" };
-// const object2 = { b: "2", a: "1" };
-// const object3 = { a: "1", b: "2", c: "3" };
-// console.log(eqObjects(object1, object3)); // => true
+//test primitive as values test
+
+const ab = { a: "1", b: "2" };
+const ba = { b: "2", a: "1" };
+eqObjects(ab, ba); // => true
+
+const abc = { a: "1", b: "2", c: "3" };
+eqObjects(ab, abc); // => false
+
+console.log(assertEqual(eqObjects(ab, ba), true));
+console.log(assertEqual(eqObjects(ab, abc), false));
 
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-//console.log(eqArrays(eqObjects(cd, dc))); // => true
+//Arrays as values test
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-//console.log(eqArrays(eqObjects(cd, cd2))); // => false
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// eqObjects(cd, dc); // => true
 
-console.log(assertEqual(eqObjects(cd, cd2), false));
-console.log(assertEqual(eqObjects(cd, dc), true));
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// eqObjects(cd, cd2); // => false
+
+// console.log(assertEqual(eqObjects(cd, dc), true));
+// console.log(assertEqual(eqObjects(cd, cd2), false));
