@@ -4,7 +4,7 @@ const countOnly = function(allItems, itemsTocount) {
   for (let item of allItems) {
     
     if(itemsTocount[item] === true) {
-      
+      console.log(item);
       if(result[item]) {
 
         result[item]+=1;
