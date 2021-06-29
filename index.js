@@ -8,15 +8,13 @@ const eqObjects = require('./eqObjects');
 const findKeyByValue = require('./findKeyByValue'); 
 const findKey = require('./findKey'); 
 const head = require('./head');
-const letterPositions = require('./letterPositions');  
-//const main = require('./main');  
+const letterPositions = require('./letterPositions');   
 const map = require('./map'); 
 const middle = require('./middle'); 
 const tail = require('./tail'); 
 const takeUntil = require('./takeUntil');
 const without = require('./without');
-
-// flatten && reverse check with emeka why i don't have this code.
+const reverse = require('./reverse');
 
 
 module.exports = {
@@ -31,9 +29,9 @@ module.exports = {
   findKey,
   head,
   letterPositions,
-  //main,
   map,
   middle,
+  reverse,
   tail,
   takeUntil,
   without

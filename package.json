@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@chomzy/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "An additional library for [lotide](https://lodash.com) library",
   "main": "main.js",
   "directories": {
     "test": "test"
