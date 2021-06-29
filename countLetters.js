@@ -1,30 +1,18 @@
 const countLetters = function(str) {
-    let result = {};
-    for (let item of str) { 
-        
-      if(result[item]) {
-
-        result[item]+=1;
-       delete result[" "];
-      }
-      else {
-        result[item] = 1; // counts the first item
-      }
+  let letterCount = {};
+  for (let letters of str) {
+    if (letterCount[letters] === undefined) {
+      letterCount[letters] = 0;
     }
-    return result; 
 
-    }
+    letterCount[letters] += 1;
+    delete letterCount[" "];
     
-
-
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
   }
+  return letterCount;
 
 };
-console.log(countLetters("lighthouse in the house")); // how to make the code count both small and uppercase?
 
-//console.log(assertEqual(countLetters("Lighthouse Labs"),{'L': 1, 'a': 1, 'b': 1}));
+
+
+module.exports = countLetters;
