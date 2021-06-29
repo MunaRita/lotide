@@ -1,8 +1,21 @@
+const assert = require('chai').assert;
 const eqArrays = require('../eqArrays');
-const assertEqual = require('../assertEqual');
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => false
+describe("#eqArrays", () => {
+  it("returns ✅✅✅ Assertion passed: [1, 2, 3] === [1, 2, 3]", () => {   // => true
+    assert.isTrue(eqArrays([1, 2, 3], [1, 2, 3]));
+  });
 
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => false
+  it("returns ✅✅✅ Assertion passed: [\"1\", \"2\", \"3\"] === [\"1\", \"2\", \"3\"]", () => {   // => true
+    assert.isTrue(eqArrays(["1", "2", "3"], ["1", "2", "3"]));
+  });
+
+  it("returns ❌❌❌ Assertion Failed: [1, 2, 3] !== [3, 2, 1]", () => {    // => false
+    assert.isFalse(eqArrays([1, 2, 3], [3, 2, 1]));
+  });
+
+  it("returns ❌❌❌ Assertion Failed: [\"1\", \"2\", \"3\"] !== [\"1\", \"2\", 3]]", () => {  // => false
+    assert.isFalse(eqArrays(["1", "2", "3"], ["1", "2", 3]));
+  });
+
+});
