@@ -43,3 +43,4 @@ The following functions are currently implemented:
 * `reverse(string)`: Returns a reverse of the characters of the string.
 * `tail(array)`: Returns the whole element except the first element in the array.
 * `without(array1,array2)`: Returns the elements that are not in the array2 where array2 is the exclusion array.
+* `flatten(array)`: Returns the elements in the array or the elements in the nested array(s).
